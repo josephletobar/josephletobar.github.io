@@ -14,37 +14,53 @@
     @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap');
 
-    h1 {
+    /* Classic academic headers */
+    h1, h2, h3, h4 {
         font-family: 'IBM Plex Mono', monospace;
-        white-space: pre;
-        font-size: 70px; /* Adjust size as needed */
-        text-align: center;
-        
-        color: white;
-        font-weight: bolder;
-        
-        /* Glow Effect */
-        text-shadow: 
-            -2px 0px 1px rgba(255, 0, 0, 0.8),   /* Red channel offset left */
-            2px 0px 1px rgba(0, 255, 255, 0.8); /* Cyan channel offset right */
-       
+        font-weight: 300;
+    }
+
+    /* Old-school academic monospace body */
+    body, main, p, ul, li {
+        font-family: 'Courier Prime', monospace;
+        font-weight: 300;
+    }
+
+    /* h1 overrides */
+    h1 {
+        font-size: 40px;
+    }
+
+    /* h2 overrides */
+    h2 {
+        font-size: 17px;
+        opacity: 0.75;
+        font-weight: 300;
+        margin-bottom: 80px;
+    }
+
+    
+    h3 {
+        font-size: 20px;
+        font-weight: 300;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 6px;
+        margin-top: 60px;
+        margin-bottom: 25px;
     }
 
     body {
-        background-color: #090722; /* Darker shade of black for a softer contrast */
-        color: whitesmoke;
+        background-color: whitesmoke;
+        color: black;
+        margin: 0 40px;   /* left + right spacing */
+        padding: 40px 0;      /* top + bottom padding */
+
     }
 
     main {
-        color: white;
-        text-align: center;
+        color:black;
+        text-align: left;
 
-        /* Glow Effect */
-        text-shadow: 
-            -2px 0px 2px rgba(255, 0, 0, 0.8),   /* Red channel offset left */
-            2px 0px 2px rgba(0, 255, 255, 0.8); /* Cyan channel offset right */
-
-        /* CRT Blur & Contrast */
         font-family: 'IBM Plex Mono', monospace;
         font-size: 16px;
 
@@ -58,42 +74,76 @@
     width: 100%;
     height: 100%;
 
-    background: repeating-linear-gradient(
-        rgba(0, 0, 0, 0.15) 0px,            /* Softer dark base */
-        rgba(0, 255, 255, 0.02) 1px,       /* Very faint cyan line */
-        rgba(255, 255, 255, 0.03) 2px,     /* Lighter white highlight */
-        transparent 3px,
-        transparent 6px
-    );
-
-    opacity: 0.25;                      /* Lowered from 0.5 */
-    filter: blur(0.5px) contrast(1.8) brightness(1.05);  /* Milder filter settings */
-    mix-blend-mode: screen;
-    pointer-events: none;
-    z-index: 10000;
     }
 
 </style>
 
 <body>
     <header>
-    <!--    <h1>
-       ___                      _       _          _        _                
-      |_  |                    | |     | |        | |      | |               
-        | | ___  ___  ___ _ __ | |__   | |     ___| |_ ___ | |__   __ _ _ __ 
-        | |/ _ \/ __|/ _ \ '_ \| '_ \  | |    / _ \ __/ _ \| '_ \ / _` | '__|
-    /\__/ / (_) \__ \  __/ |_) | | | | | |___|  __/ || (_) | |_) | (_| | |   
-    \____/ \___/|___/\___| .__/|_| |_| \_____/\___|\__\___/|_.__/ \__,_|_|   
-                        | |                                                 
-                        |_|                                                 
-        </h1>
-        -->
-
         <h1>Joseph Letobar</h1>
+        <h2>Lockheed Martin | Undergraduate Researcher | Computer Science Student</h2>
     
     </header>
     <main>
-        <p>This is a sample paragraph.</p>
+        <h3>Experience</h3>
+
+            <h4><strong>Lockheed Martin</strong> — Software Quality Engineer (Part-Time) (Spring 2026)</h4>
+            <p>I work in the Sensors Integration and Test Center at Lockheed Martin, supporting the Quality Engineering team on software and systems used in robotics and missile-related programs.</p>
+
+            <h4>
+                <strong>Laboratory for Interaction of Machine and Brain (LIMB)</strong> 
+                — Undergraduate Research Assistant (Jul 2025 – Present)
+            </h4>
+            <p>In the <a href="https://www.ece.ucf.edu/rakhshanlab/" target="_blank">LIMB Lab</a> under Dr. Mohsen Rakhshan, I work on intelligent robotic control systems that combine machine learning, EMG signal processing, and embedded programming. My work spans Python-based data processing, C++ microcontroller development, and ML models for interpreting muscle activity and controlling a prosthetic hand. I collaborate closely with my team on designing, testing, and refining software across the full pipeline, from data acquisition to real-time control.</p>
+
+            <h4><strong>UCF Information Technology</strong> — Information Technology Intern (Apr 2025 – Jul 2025)</h4>
+            <p>At UCF IT, I helped overhaul web infrastructure used by more than 80,000 users, working with IT engineers to reorganize site content and update parts of the platform's underlying structure.</p>
+
+
+        <h3>Projects</h3>
+
+            <h4><strong>Panama Canal Water Conservation (Goldilocks)</strong> 
+                <a href="https://github.com/josephletobar/goldilocks" target="_blank">(View Project)</a>
+                (Jan 2025 – Apr 2025)
+            </h4>
+            <p>
+            Goldilocks is a Department of Defense–sponsored project developed through the University of Central Florida’s 
+            <a href="https://www.cecs.ucf.edu/e4d/" target="_blank">Entrepreneurship for Defense course</a>, 
+            a DoD initiative run in partnership with the National Security Innovation Network (NSIN). 
+            Conducted in collaboration with U.S. Southern Command (SOUTHCOM), the Defense Innovation Unit (DIU), 
+            and a multidisciplinary student engineering team, the project focused on freshwater conservation in the Panama Canal.
+            </p>
+            <p>I developed a C# Unity simulation of Canal operations and a Python analysis tool for throughput modeling, estimating a 10% performance gain and more than $250M in annual savings from the proposed changes. I also incorporated feedback from over 20 stakeholders into the system assumptions and design.</p>
+
+            <!-- <h4><strong>ParseNote – AI Study Assistant </strong>(Feb 2025 – May 2025)</h4>
+            <p>I built ParseNote as an NLP application in Flask that analyzes large unstructured documents, added a retrieval-augmented generation pipeline that improved accuracy by 19%, reduced query latency by 23% through search and retrieval optimizations, and extended the system to handle handwritten notes, charts, and images using computer vision.</p> -->
+
+            <h4><strong>Lane Detection & Warning System</strong> 
+                <a href="https://github.com/josephletobar/lane-assist-system" target="_blank">(View Project)</a>
+                (May 2025 – Jul 2025)
+            </h4>
+            <p>
+            A lane detection system built for deployment in an RV, designed to provide real-time lane tracking and departure alerts. 
+            It supports both classical computer vision methods and deep learning–based approaches, depending on the available compute. 
+            The project was part of a broader RV automation effort that included additional components such as sensor integration, 
+            control logic, and a user interface, but this section focuses on the lane detection and vision pipeline I developed.
+            </p>
+
+            <h4><strong>Bioinformatics Research Project</strong> 
+                <a href="https://github.com/josephletobar/parkinsons-spatial-transcriptomics" target="_blank">(View Project)</a>
+                (Aug 2025 – Present)
+            </h4>
+            <p>In my bioinformatics work, I use Python and Jupyter Notebook to apply machine learning, deep learning, and statistical methods to biological datasets with more than 10,000 samples. My workflow relies on NumPy, Pandas, SciPy, scikit-learn, PyTorch, and Matplotlib for data integration, preprocessing, feature extraction, and predictive modeling across biological and omics data.</p>
+
+        <h3>Education</h3>
+            <h4><strong>University of Central Florida</strong> — Bachelor of Science in Computer Science (Expected Graduation May 2028)</h4>
+            <p>Minors: Intelligent Robotic Systems, Cognitive Science</p>
+            <p>Relevant Coursework: Data Structures and Algorithms (COP3502), Bioinformatics (CAP5510)</p>
+
+        <h3>Contact</h3>
+            <p>Email: <a href="mailto:josephletobar@gmail.com">josephletobar@gmail.com</a></p>
+            <p>GitHub: <a href="https://github.com/josephletobar" target="_blank">github.com/josephletobar</a></p>
+            <p>LinkedIn: <a href="https://linkedin.com/in/josephletobar" target="_blank">linkedin.com/in/josephletobar</a></p>
     </main>
     <footer>
     </footer>

@@ -10,7 +10,4 @@ Built as a simple portfolio to share my work and background.
 
 ## Link  
 
-
-## Tech  
-- HTML, CSS, JavaScript  
-- Git & GitHub  
+https://josephletobar.github.io
