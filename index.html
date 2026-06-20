@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Joseph Letobar</title>
-    <link rel="stylesheet" href="styles.css">
 </head>
 
 
@@ -76,74 +75,170 @@
         pointer-events: none;   /* This makes your page clickable again */
     }
 
+    .poster-preview {
+        display: block;
+        width: 100%;
+        border: 1px solid #ccc;
+        border-radius: 12px;
+        box-shadow: 0 14px 35px rgba(0, 0, 0, 0.25);
+        overflow: hidden;
+        background: white;
+    }
+
+    .poster-preview img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .limb-media,
+    .bowling-media,
+    .panama-media {
+        display: grid;
+        gap: 24px;
+        align-items: start;
+    }
+
+    .limb-media {
+        grid-template-columns: minmax(0, 1.25fr) minmax(220px, 0.75fr);
+    }
+
+    .panama-media {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .bowling-media {
+        grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.35fr);
+    }
+
+    .limb-media video,
+    .bowling-media video,
+    .panama-media img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        border: 1px solid #ccc;
+        border-radius: 12px;
+        box-shadow: 0 14px 35px rgba(0, 0, 0, 0.25);
+        object-fit: cover;
+    }
+
+    .bowling-demo {
+        aspect-ratio: 4 / 3;
+    }
+
+    .bowling-wide {
+        aspect-ratio: 3240 / 1436;
+    }
+
+    .limb-media video,
+    .bowling-media video {
+        background: black;
+        object-fit: contain;
+    }
+
+    @media (max-width: 800px) {
+        .limb-media,
+        .bowling-media,
+        .panama-media {
+            grid-template-columns: 1fr;
+        }
+    }
+
 </style>
 
 <body>
     <header>
         <h1>Joseph Letobar</h1>
-        <h2>Lockheed Martin | Undergraduate Researcher | Computer Science Student</h2>
-    
+        <h2>AI • Robotics • Computer Vision</h2>
+        <!-- <p>Building intelligent systems for robotics, perception, and human-machine interaction.</p> -->
     </header>
+
     <main>
+        <h3>Featured Projects</h3>
+
+            <h4><strong>Open-World Robot Memory (GTRI)</strong></h4>
+            <p>[Large embedded video goes here]</p>
+            <p>
+            A robotics research project focused on open-world memory for embodied agents. 
+            The goal is to help robots retain, retrieve, and reason over observations from changing environments instead of treating every scene as isolated. 
+            This project sits at the intersection of robotics, perception, and long-term autonomy. 
+            More details, demo media, and links can be added here as the project becomes shareable.
+            </p>
+            <p>
+                Links:
+                <a href="#" target="_blank">GitHub</a>
+                |
+                <a href="#" target="_blank">Paper</a>
+            </p>
+
+            <h4><strong>EMG Prosthetic Hand Control (LIMB)</strong></h4>
+            <p>
+            A human-machine interaction project for controlling a prosthetic hand using EMG signals. 
+            The system combines signal processing, machine learning, embedded programming, and wireless control to make prosthetic motion feel more intuitive. 
+            I work on the software pipeline from data acquisition and model development to real-time control behavior. 
+            The project is developed through the Laboratory for Interaction of Machine and Brain at UCF.
+            </p>
+            <ul>
+                <li>70% improvement in control intuitiveness</li>
+                <li>Wireless control</li>
+                <li>Human-subject testing</li>
+            </ul>
+            <div class="limb-media">
+                <video src="assets/limb/prosthetic-demo.mp4" controls autoplay muted loop playsinline></video>
+                <a class="poster-preview" href="force-control-poster.html" target="_blank" rel="noreferrer">
+                    <img src="assets/limb/force-control-poster-preview.png" alt="Force Control Poster preview">
+                </a>
+            </div>
+
+            <h4><strong>AR Bowling Analytics</strong></h4>
+            <p>
+            An augmented-reality bowling analytics project using Meta glasses, lane segmentation, ball tracking, and AR overlay concepts. 
+            The system is intended to understand the lane, track the ball, and surface useful feedback directly in the bowler's field of view. 
+            This project combines computer vision, spatial perception, and real-time user feedback. 
+            Demo media and implementation notes can live here once the project is ready to show.
+            </p>
+            <div class="bowling-media">
+                <video class="bowling-demo" src="assets/ar-bowling/demo.mp4" controls autoplay muted loop playsinline></video>
+                <video class="bowling-wide" src="assets/ar-bowling/side_by_side-2.mp4" controls autoplay muted loop playsinline></video>
+            </div>
+
+            <h4><strong>Panama Canal Water Conservation</strong> 
+                <a href="https://github.com/josephletobar/goldilocks" target="_blank">(GitHub)</a>
+            </h4>
+            <p>
+            A Department of Defense-sponsored project developed through UCF's Entrepreneurship for Defense course in collaboration with SOUTHCOM, DIU, NSIN, and a multidisciplinary student team. 
+            I built a C# Unity simulation of Panama Canal operations and a Python analysis tool for throughput modeling. 
+            The work estimated a 10% performance gain and more than $250M in annual savings from proposed water-conservation changes.
+            </p>
+            <div class="panama-media">
+                <img src="assets/panama-canal/canalsim.gif" alt="Panama Canal simulation demo">
+                <img src="assets/panama-canal/bladdersim.gif" alt="Water bladder simulation demo">
+            </div>
+
         <h3>Experience</h3>
 
-            <h4><strong>Lockheed Martin</strong> — Quality Engineer, Automation (Part-Time) (Dec 2025 - Present)</h4>
-            <p>I work in Lockheed Martin’s Sensors Integration and Test Center, supporting Quality Engineering automation with industrial robotics and optical and photonic sensors.</p>
+            <h4><strong>GTRI Research Intern</strong></h4>
+            <p>Research work in robotics, perception, and open-world robot memory.</p>
 
-            <h4>
-                <strong>Laboratory for Interaction of Machine and Brain (LIMB)</strong> 
-                — Undergraduate Research Assistant (Jul 2025 – Present)
-            </h4>
-            <p>In the <a href="https://www.ece.ucf.edu/rakhshanlab/" target="_blank">LIMB Lab</a> under Dr. Mohsen Rakhshan, I work on intelligent robotic control systems that combine machine learning, EMG signal processing, and embedded programming. My work spans Python-based data processing, C++ microcontroller development, and ML models for interpreting muscle activity and controlling a prosthetic hand. I collaborate closely with my team on designing, testing, and refining software across the full pipeline, from data acquisition to real-time control.</p>
+            <h4><strong>Lockheed Martin</strong></h4>
+            <p>Quality Engineering automation work involving industrial robotics and optical and photonic sensors.</p>
 
-            <h4><strong>UCF Information Technology</strong> — Information Technology Intern (Apr 2025 – Jul 2025)</h4>
-            <p>At UCF IT, I helped overhaul web infrastructure used by more than 80,000 users, working with IT engineers to reorganize site content and update parts of the platform's underlying structure.</p>
+            <h4><strong>LIMB Lab</strong></h4>
+            <p>Undergraduate research on intelligent robotic control systems, EMG signal processing, embedded programming, and prosthetic hand control.</p>
 
-
-        <h3>Projects</h3>
-
-            <h4><strong>Panama Canal Water Conservation (Goldilocks)</strong> 
-                <a href="https://github.com/josephletobar/goldilocks" target="_blank">(View Project)</a>
-                (Jan 2025 – Apr 2025)
-            </h4>
-            <p>
-            Goldilocks is a Department of Defense–sponsored project developed through the University of Central Florida’s 
-            <a href="https://www.cecs.ucf.edu/e4d/" target="_blank">Entrepreneurship for Defense course</a>, 
-            a DoD initiative run in partnership with the National Security Innovation Network (NSIN). 
-            Conducted in collaboration with U.S. Southern Command (SOUTHCOM), the Defense Innovation Unit (DIU), 
-            and a multidisciplinary student engineering team, the project focused on freshwater conservation in the Panama Canal.
-            </p>
-            <p>I developed a C# Unity simulation of Canal operations and a Python analysis tool for throughput modeling, estimating a 10% performance gain and more than $250M in annual savings from the proposed changes. I also incorporated feedback from over 20 stakeholders into the system assumptions and design.</p>
-
-            <!-- <h4><strong>ParseNote – AI Study Assistant </strong>(Feb 2025 – May 2025)</h4>
-            <p>I built ParseNote as an NLP application in Flask that analyzes large unstructured documents, added a retrieval-augmented generation pipeline that improved accuracy by 19%, reduced query latency by 23% through search and retrieval optimizations, and extended the system to handle handwritten notes, charts, and images using computer vision.</p> -->
-
-            <h4><strong>Lane Detection & Warning System</strong> 
-                <a href="https://github.com/josephletobar/lane-assist-system" target="_blank">(View Project)</a>
-                (May 2025 – Jul 2025)
-            </h4>
-            <p>
-            A lane detection system built for deployment in an RV, designed to provide real-time lane tracking and departure alerts. 
-            It supports both classical computer vision methods and deep learning–based approaches, depending on the available compute. 
-            The project was part of a broader RV automation effort that included additional components such as sensor integration, 
-            control logic, and a user interface, but this section focuses on the lane detection and vision pipeline I developed.
-            </p>
-
-            <h4><strong>Bioinformatics Research Project</strong> 
-                <a href="https://github.com/josephletobar/parkinsons-spatial-transcriptomics" target="_blank">(View Project)</a>
-                (Aug 2025 – Present)
-            </h4>
-            <p>In my bioinformatics work, I use Python and Jupyter Notebook to apply machine learning, deep learning, and statistical methods to biological datasets with more than 10,000 samples. My workflow relies on NumPy, Pandas, SciPy, scikit-learn, PyTorch, and Matplotlib for data integration, preprocessing, feature extraction, and predictive modeling across biological and omics data.</p>
+            <h4><strong>UCF IT Intern</strong></h4>
+            <p>Worked as an IT intern at the University of Central Florida.</p>
 
         <h3>Education</h3>
-            <h4><strong>University of Central Florida</strong> — Bachelor of Science in Computer Science (Expected Graduation May 2028)</h4>
-            <p>Minors: Intelligent Robotic Systems, Cognitive Science</p>
-            <p>Relevant Coursework: Data Structures and Algorithms (COP3502), Bioinformatics (CAP5510)</p>
+            <h4><strong>University of Central Florida</strong></h4>
+            <p>B.S. Computer Science</p>
 
-        <h3>Contact</h3>
-            <p>Email: <a href="mailto:josephletobar@gmail.com">josephletobar@gmail.com</a></p>
+        <h3>Links</h3>
+            <p>Resume PDF: <a href="#" target="_blank">Coming soon</a></p>
             <p>GitHub: <a href="https://github.com/josephletobar" target="_blank">github.com/josephletobar</a></p>
             <p>LinkedIn: <a href="https://linkedin.com/in/josephletobar" target="_blank">linkedin.com/in/josephletobar</a></p>
+            <p>Email: <a href="mailto:josephletobar@gmail.com">josephletobar@gmail.com</a></p>
     </main>
     <footer>
     </footer>
