@@ -128,6 +128,31 @@ h2 {
   object-position: center center;
 }
 
+.one .thoth-base {
+  object-fit: fill;
+}
+
+.thoth-one,
+.thoth-one .two,
+.thoth-one video,
+.thoth-one img {
+  width: 160px;
+  height: 160px;
+}
+
+.thoth-one video {
+  object-position: 32% center;
+}
+
+.thoth-one .two {
+  overflow: hidden;
+}
+
+.thoth-one .two video {
+  height: 180px;
+  transform: translateY(-20px);
+}
+
 .two {
   width: 160px;
   height: 160px;

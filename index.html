@@ -44,7 +44,7 @@
               <td style="padding:16px;width:100%;vertical-align:middle">
                 <h2>Research</h2>
                 <p>
-                  My research interests are broadly in Embodied AI, with a focus on computational perception through computer vision and force sensing, and a focus on cognitive robotics. In practice, this means developing robotics and AI architectures inspired by neuroscience and cognitive science.
+                  My research interests are broadly in Embodied AI, with a focus on computational perception through computer vision and haptic sensing, and a focus on cognitive robotics. In practice, this means developing robotics and AI architectures inspired by neuroscience and cognitive science.
                 </p>
               </td>
             </tr>
@@ -52,10 +52,16 @@
 
           <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
-            <tr>
+            <tr onmouseout="thoth_stop()" onmouseover="thoth_start()">
               <td style="padding:16px;width:20%;vertical-align:middle">
-                <div class="one">
-                  <div style="width:160px;height:160px;"></div>
+                <div class="one thoth-one">
+                  <div class="two" id="thoth_image">
+                    <video id="thoth_video" width="160" height="160" muted loop playsinline preload="none">
+                      <source src="assets/thoth/heatmap.mp4" type="video/mp4">
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                  <img class="thoth-base" src="assets/thoth/concept_v2.png" width="160" height="160" alt="THOTH system concept diagram">
                 </div>
               </td>
               <td style="padding:8px;width:80%;vertical-align:middle">
@@ -243,6 +249,26 @@
         }
       }
 
+      function thoth_start() {
+        const overlay = document.getElementById("thoth_image");
+        const video = document.getElementById("thoth_video");
+        if (overlay && video) {
+          overlay.style.opacity = "1";
+          video.currentTime = 0;
+          video.play().catch(function(){});
+        }
+      }
+
+      function thoth_stop() {
+        const overlay = document.getElementById("thoth_image");
+        const video = document.getElementById("thoth_video");
+        if (overlay && video) {
+          overlay.style.opacity = "0";
+          video.pause();
+        }
+      }
+
+      thoth_stop();
       limb_stop();
       ar_stop();
       setFirstFrameVideoPreview(document.getElementById("limb_video"), document.getElementById("limb_preview"));
