@@ -65,15 +65,13 @@
                 </div>
               </td>
               <td style="padding:8px;width:80%;vertical-align:middle">
-                <a href="https://github.com/">
-                  <span class="papertitle">THOTH: Task-Aware Semantic Memory for Aerial Missions</span>
-                </a>
+                <span class="papertitle">THOTH: Task-Aware Semantic Memory for Aerial Missions</span>
                 <br>
                 <strong>Joseph Letobar</strong>, Arianna Lee, Jylen Tate, Neal Cronin, Clint Johnson
                 <br>
-                <em>MIT Undergraduate Technology Research Conference (URTC)</em>, 2026
+                <em>MIT Undergraduate Technology Research Conference (URTC)</em>, 2026 (under review)
                 <br>
-                <a href="#">research paper</a>
+                <a href="thoth-paper.html" target="_blank" rel="noopener">research paper</a>
                 <!-- /
                 <a href="#">repo</a> -->
                 <p></p>
@@ -84,10 +82,16 @@
               </td>
             </tr>
 
-            <tr>
+            <tr style="background-color: #ffffd0;" onmouseout="rem_stop()" onmouseover="rem_start()">
               <td style="padding:16px;width:20%;vertical-align:middle">
                 <div class="one">
-                  <div style="width:160px;height:160px;"></div>
+                  <div class="two" id="rem_image">
+                    <video id="rem_video" width="160" height="160" muted loop playsinline preload="none">
+                      <source src="assets/wearable/rem-web.mp4" type="video/mp4">
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                  <img id="rem_preview" width="160" height="160" alt="">
                 </div>
               </td>
               <td style="padding:8px;width:80%;vertical-align:middle">
@@ -95,9 +99,13 @@
                 <br>
                 <strong>Joseph Letobar</strong>
                 <br>
-                <em>European Conference for Computer Vision (ECCV) Wearable AI Workshop, 2026</em>
+                <em>European Conference on Computer Vision (ECCV) Wearable AI Workshop, 2026</em> (accepted)
                 <br>
-                <a href="#">research paper</a>
+                <a href="eccv-paper.html" target="_blank" rel="noopener">research paper</a>
+                <p></p>
+                <p>
+                  Engagement and surprise, respectively inspired by Theory of Mind research and predictive processing, serve as cognitively inspired signals for deciding what wearable AI should remember.
+                </p>
               </td>
             </tr>
 
@@ -114,9 +122,7 @@
                 </div>
               </td>
               <td style="padding:8px;width:80%;vertical-align:middle">
-                <a href="force-control-poster.html">
-                  <span class="papertitle">Plug and Play Myoelectric Control</span>
-                </a>
+                <span class="papertitle">Plug and Play Myoelectric Control</span>
                 <br>
                 <strong>Joseph Letobar</strong>, Mohsen Rakhshan
                 <br>
@@ -127,7 +133,7 @@
                 <a href="#">demo</a> -->
                 <p></p>
                 <p>
-                  EMG-based control system for intuitive prosthetic hand actuation.
+                  Evaluating the effects of force control on the intuitiveness of myoelectric prosthetic hand control.
                 </p>
               </td>
             </tr>
@@ -145,9 +151,7 @@
                 </div>
               </td>
               <td style="padding:8px;width:80%;vertical-align:middle">
-                <a href="https://github.com/josephletobar/rev-vision">
-                  <span class="papertitle">Augmented Reality Bowling</span>
-                </a>
+                <span class="papertitle">Augmented Reality Bowling</span>
                 <br>
                 <strong>Joseph Letobar</strong>
                 <br>
@@ -266,6 +270,25 @@
         }
       }
 
+      function rem_start() {
+        const overlay = document.getElementById("rem_image");
+        const video = document.getElementById("rem_video");
+        if (overlay && video) {
+          overlay.style.opacity = "1";
+          video.currentTime = 0;
+          video.play().catch(function(){});
+        }
+      }
+
+      function rem_stop() {
+        const overlay = document.getElementById("rem_image");
+        const video = document.getElementById("rem_video");
+        if (overlay && video) {
+          overlay.style.opacity = "0";
+          video.pause();
+        }
+      }
+
       function thoth_start() {
         const overlay = document.getElementById("thoth_image");
         const video = document.getElementById("thoth_video");
@@ -288,8 +311,10 @@
       thoth_stop();
       limb_stop();
       ar_stop();
+      rem_stop();
       setFirstFrameVideoPreview(document.getElementById("limb_video"), document.getElementById("limb_preview"));
       setFirstFrameVideoPreview(document.getElementById("ar_video"), document.getElementById("ar_preview"));
+      setFirstFrameVideoPreview(document.getElementById("rem_video"), document.getElementById("rem_preview"));
     </script>
   </body>
 </html>
