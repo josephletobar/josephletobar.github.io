@@ -109,6 +109,33 @@
               </td>
             </tr>
 
+            <tr onmouseout="hcv_stop()" onmouseover="hcv_start()">
+              <td style="padding:16px;width:20%;vertical-align:middle">
+                <div class="one">
+                  <div class="two" id="hcv_image">
+                    <video id="hcv_video" width="160" height="160" muted loop playsinline preload="none">
+                      <source src="assets/wearable/rem-web.mp4" type="video/mp4">
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                  <img id="hcv_preview" width="160" height="160" alt="">
+                </div>
+              </td>
+              <td style="padding:8px;width:80%;vertical-align:middle">
+                <span class="papertitle">Rational Episodic Memory: From Rational Action to Agent-Centered Memory in Egocentric Video</span>
+                <br>
+                <strong>Joseph Letobar</strong>
+                <br>
+                <em>European Conference on Computer Vision (ECCV) Human-Inspired Computer Vision Workshop</em>, 2026 (accepted)
+                <br>
+                <a href="hcv-paper.html" target="_blank" rel="noopener">research paper</a>
+                <p></p>
+                <p>
+                  Rational Episodic Memory frames memory admission as inferring which observations are relevant to a wearer's goals from observable behavior, comparing engagement with visual surprise and uniform sampling.
+                </p>
+              </td>
+            </tr>
+
             <tr onmouseout="limb_stop()" onmouseover="limb_start()">
               <td style="padding:16px;width:20%;vertical-align:middle">
                 <div class="one">
@@ -289,6 +316,25 @@
         }
       }
 
+      function hcv_start() {
+        const overlay = document.getElementById("hcv_image");
+        const video = document.getElementById("hcv_video");
+        if (overlay && video) {
+          overlay.style.opacity = "1";
+          video.currentTime = 0;
+          video.play().catch(function(){});
+        }
+      }
+
+      function hcv_stop() {
+        const overlay = document.getElementById("hcv_image");
+        const video = document.getElementById("hcv_video");
+        if (overlay && video) {
+          overlay.style.opacity = "0";
+          video.pause();
+        }
+      }
+
       function thoth_start() {
         const overlay = document.getElementById("thoth_image");
         const video = document.getElementById("thoth_video");
@@ -312,9 +358,11 @@
       limb_stop();
       ar_stop();
       rem_stop();
+      hcv_stop();
       setFirstFrameVideoPreview(document.getElementById("limb_video"), document.getElementById("limb_preview"));
       setFirstFrameVideoPreview(document.getElementById("ar_video"), document.getElementById("ar_preview"));
       setFirstFrameVideoPreview(document.getElementById("rem_video"), document.getElementById("rem_preview"));
+      setFirstFrameVideoPreview(document.getElementById("hcv_video"), document.getElementById("hcv_preview"));
     </script>
   </body>
 </html>
